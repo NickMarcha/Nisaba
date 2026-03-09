@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.npm
+*.log
+.DS_Store
+*.local
+.env
+.env.*
+
+# Rust
+target/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
