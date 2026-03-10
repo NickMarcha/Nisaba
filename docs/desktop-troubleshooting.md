@@ -37,3 +37,19 @@ Tauri on Windows requires the WebView2 runtime. If the window never appears, ins
 2. In another terminal, run the built exe: `apps\desktop\src-tauri\target\debug\nisaba-desktop.exe`
 
 If the window opens, the issue is with the dev script flow. If it still doesn't open, the issue may be WebView2 or the app itself.
+
+## Icon looks cut off or shifted in taskbar/title bar (Windows)
+
+The icon is generated from `apps/desktop/src-tauri/icons/app-icon.svg`. If it appears off-center or clipped:
+
+1. Edit the SVG so the artwork is centered in the 512×512 viewBox.
+2. Regenerate icons: `cd apps/desktop && npx tauri icon src-tauri/icons/app-icon.svg`
+3. Do a **clean rebuild** so the exe picks up the new icon:
+   ```powershell
+   Remove-Item -Recurse -Force apps/desktop/src-tauri/target
+   npm run build:desktop
+   ```
+4. **Clear Windows icon cache** (icons are cached by filename):
+   - Close the app and unpin from taskbar if pinned
+   - In Task Manager, end `explorer.exe`, then File → Run new task → `explorer`
+   - Or run `ie4uinit.exe -show` to refresh
