@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Nisaba</title>
   </head>
-  <body>
+  <body style="margin: 0; height: 100vh; overflow: hidden; background: #0f0f0f;">
     <div id="app"></div>
+    <div id="error" style="display: none; padding: 20px; color: #f87171; font-family: system-ui;"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      window.addEventListener('error', (e) => {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').textContent = e.message || String(e);
+      });
+      window.addEventListener('unhandledrejection', (e) => {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').textContent = e.reason?.message || String(e.reason);
+      });
+    </script>
   </body>
 </html>

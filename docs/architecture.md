@@ -80,11 +80,11 @@ Optional component enabling realtime editing, shared workspaces, web access.
 
 ### Web Client
 
-Browser interface for reading, lightweight editing, collaboration.
+Browser interface for reading, editing, collaboration.
 
 **Stack:** Svelte, CodeMirror, Yjs, WebSocket.
 
-**Sync model:** On-demand. Documents sync when opened; no full vault download. Open docs use full CRDT (Yjs) for real-time collaboration. "Lightweight" = don't load everything upfront, not partial/incomplete data.
+**Sync model:** On-demand. Documents sync when opened; no full vault download. Open docs use full CRDT (Yjs) for real-time collaboration. File list and index (Blocks, Links) come from WebSocket (`_meta`, `_blocks` docs) — no local indexing.
 
 ### Shared Frontend
 

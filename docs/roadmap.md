@@ -2,17 +2,17 @@
 
 Decisions (license, stack, data model) are in [Design Principles](design-principles.md#decision-log) and [Architecture](architecture.md).
 
-## MVP Scope
+## MVP Scope — Complete
 
-First version should include:
+First version includes:
 
 1. Desktop vault
 2. Markdown editing
 3. SQLite index (derived from Markdown)
-4. Relational queries (via views)
-5. Optional sync server
+4. Relational queries (via views: Blocks, Links)
+5. Sync server + web client (real-time Yjs sync)
 
-**Skip initially:**
+**Skipped for MVP:**
 
 - Plugins
 - Mobile apps

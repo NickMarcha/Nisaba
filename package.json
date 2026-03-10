@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:desktop": "npm run dev -w @nisaba/desktop",
+    "dev:desktop": "npm run tauri dev -w @nisaba/desktop",
+    "dev:desktop:direct": "cd apps/desktop && npx tauri dev",
+    "dev:sync": "cd apps/sync-server && cargo run",
     "dev:web": "npm run dev -w @nisaba/web",
     "build:desktop": "npm run tauri build -w @nisaba/desktop",
     "build:web": "npm run build -w @nisaba/web",

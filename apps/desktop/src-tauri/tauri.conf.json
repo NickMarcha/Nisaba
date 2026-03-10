@@ -10,7 +10,15 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "withGlobalTauri": true
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Nisaba",
+        "width": 1000,
+        "height": 700
+      }
+    ]
   },
   "bundle": {
     "active": true,
